@@ -19,7 +19,7 @@ const CTA = () => (
     />
     <div className="section" style={{ textAlign: "center" }}>
       <Reveal>
-        <div className="section-label">// Let's Work Together</div>
+        <div className="section-label">{"// Let's Work Together"}</div>
         <h2
           className="section-title"
           style={{ maxWidth: 700, margin: "0 auto 20px" }}
@@ -36,7 +36,7 @@ const CTA = () => (
           }}
         >
           Whether you need a robust API platform, a full-stack backend system, or SEO-optimized
-          developer content — let's talk.
+          developer content — let&apos;s talk.
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <button className="btn-primary" onClick={() => scrollToElement("contact")}>

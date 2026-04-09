@@ -23,7 +23,7 @@ const Contact = () => {
         <div className="grid-2" style={{ gap: 48, alignItems: "start" }}>
           <Reveal>
             <div>
-              <div className="section-label">// Contact</div>
+              <div className="section-label">{"// Contact"}</div>
               <h2 className="section-title">Get in touch</h2>
               <p
                 style={{

@@ -38,7 +38,7 @@ const TestimonialCard = ({ t, delay, accentColor }) => (
           marginTop: 8,
         }}
       >
-        "{t.text}"
+        &ldquo;{t.text}&rdquo;
       </p>
       <div>
         <div style={{ fontWeight: 700, fontSize: 15 }}>{t.name}</div>
@@ -55,7 +55,7 @@ const Testimonials = () => {
   return (
     <div style={{ marginTop: 80 }}>
       <Reveal>
-        <div className="section-label">// Testimonials</div>
+        <div className="section-label">{"// Testimonials"}</div>
         <h2 className="section-title">Trusted by engineers and AI leaders</h2>
         <p
           style={{
@@ -83,7 +83,7 @@ const Testimonials = () => {
           marginBottom: 16,
         }}
       >
-        Backend Engineering · Deloitte
+        {"Backend Engineering · Deloitte"}
       </div>
       <div className="grid-3" style={{ marginBottom: 40 }}>
         {backendTestimonials.map((t, i) => (
@@ -103,7 +103,7 @@ const Testimonials = () => {
           marginBottom: 16,
         }}
       >
-        AI & Technical Writing · Unite.AI
+        {"AI & Technical Writing · Unite.AI"}
       </div>
       <div style={{ maxWidth: 480 }}>
         {aiTestimonials.map((t, i) => (
