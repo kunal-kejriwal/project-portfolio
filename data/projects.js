@@ -8,7 +8,7 @@ const projects = [
       "Built a schema-driven live backend simulation platform with a custom URL dispatcher and request multiplexer. Developers define JSON Schema Objects and instantly get globally accessible REST endpoints with real persistence, per-user namespace isolation, configurable rate limits, and full CRUD. Background jobs run via Celery + Redis with retry logic and dead-letter queues; deployed on GCP.",
     stack: ["Python", "Django", "DRF", "FastAPI", "Redis", "Celery", "PostgreSQL", "Docker", "GCP"],
     outcome:
-      "500+ developers (organic), 250K+ API calls/user/month — live at theapiengine.com.",
+      "Supports 500+ Developers, 250K+ API calls/user/month.",
     link: "https://theapiengine.com",
     highlights: [
       "Custom URL dispatcher with per-user namespace isolation",
@@ -27,7 +27,8 @@ const projects = [
     stack: ["Python", "FastAPI", "PostgreSQL", "Redis Pub/Sub", "SQLAlchemy", "WebSockets", "Docker", "GCP"],
     outcome:
       "End-to-end simulation of self-healing mesh networks: real-time failure/recovery events, multi-hop Dijkstra routing, per-message hop-by-hop latency breakdown, and live WebSocket event stream. 25 automated tests (unit + topology).",
-    highlights: [
+    link: "https://thedevngn.com/",
+      highlights: [
       "Failure-aware Dijkstra — DOWN nodes pruned before traversal, O((V+E) log V)",
       "Redis Pub/Sub fan-out across independent async worker plane",
       "structlog + per-message latency breakdown + GCP Cloud Monitoring uptime checks",
