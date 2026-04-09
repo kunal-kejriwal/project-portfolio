@@ -6,7 +6,7 @@ const testimonials = [
     text: "Kunal translates complex AI topics — agents, multimodal systems, modern ML — into content that resonates with both technical and broader audiences. He brings a thoughtful, analytical approach that's rare in the AI writing space.",
   },
   {
-    name: "Vamsi Krishna",
+    name: "Vamsi Battula",
     role: "Software Engineer, Deloitte",
     category: "Backend Engineering",
     text: "Kunal stood out as a strong backend engineer with a sharp eye for performance. He built high-throughput APIs and data pipelines at scale — consistently focused on reliability and optimization. Proactive, collaborative, and takes full ownership.",

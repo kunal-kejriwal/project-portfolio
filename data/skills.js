@@ -1,22 +1,22 @@
 const skills = [
   {
-    title: "Backend Development",
-    items: ["Java", "Spring Boot", "REST APIs", "System Design", "Microservices", "Hibernate"],
+    title: "Primary Stack",
+    items: ["Python", "Django", "Django REST Framework", "FastAPI", "REST API Design", "asyncio"],
     accent: "var(--accent)",
   },
   {
-    title: "Cloud & DevOps",
-    items: ["AWS", "GCP", "Salesforce", "CI/CD", "Docker", "Kubernetes"],
+    title: "Systems & Infrastructure",
+    items: ["Celery", "Redis", "Kafka", "GCP Pub/Sub", "WebSockets", "Docker", "GCP", "Cloud Run", "PostgreSQL", "SQLAlchemy"],
     accent: "var(--accent2)",
   },
   {
-    title: "Writing & Content",
-    items: ["SEO Writing", "Technical Blogs", "Dev Documentation", "Content Strategy"],
+    title: "Secondary / Polyglot",
+    items: ["Java", "Spring Boot", "Node.js", "JavaScript", "SQL", "Hibernate"],
     accent: "var(--accent3)",
   },
   {
-    title: "Computer Science",
-    items: ["DSA", "OOP", "API Integrations", "Database Design", "Testing", "Agile"],
+    title: "Practices",
+    items: ["Microservices", "System Design", "Event-Driven Architecture", "Performance Engineering", "CI/CD", "pytest", "Agile"],
     accent: "var(--accent4)",
   },
 ];
