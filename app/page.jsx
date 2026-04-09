@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   Hero,
@@ -14,7 +14,7 @@ import {
 } from "../components/sections";
 import { scrollToElement } from "../utils/helpers";
 
-export default function Home() {
+const ScrollHandler = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -26,8 +26,15 @@ export default function Home() {
     }
   }, [searchParams]);
 
+  return null;
+};
+
+export default function Home() {
   return (
     <>
+      <Suspense fallback={null}>
+        <ScrollHandler />
+      </Suspense>
       <Hero />
       <About />
       <Skills />
