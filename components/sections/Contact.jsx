@@ -64,30 +64,48 @@ const Contact = () => {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <form
+              action="https://formspree.io/f/xgopbznn"
+              method="POST"
+              style={{ display: "flex", flexDirection: "column", gap: 16 }}
+            >
               <input
+                name="name"
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange("name")}
+                required
               />
+
               <input
-                placeholder="Your Email"
+                name="email"
                 type="email"
+                placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange("email")}
+                required
               />
+
               <textarea
+                name="message"
                 placeholder="Tell me about your project..."
                 value={formData.message}
                 onChange={handleChange("message")}
+                required
               />
+
+              {/* Optional hidden fields */}
+              <input type="hidden" name="_subject" value="New Contact Form Submission" />
+              <input type="hidden" name="_captcha" value="false" />
+
               <button
+                type="submit"
                 className="btn-primary"
                 style={{ width: "100%", justifyContent: "center", padding: "16px 28px" }}
               >
                 Send Message <ArrowRight />
               </button>
-            </div>
+            </form>
           </Reveal>
         </div>
       </div>
