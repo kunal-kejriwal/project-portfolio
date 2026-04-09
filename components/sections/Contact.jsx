@@ -12,9 +12,39 @@ const CONTACT_LINKS = [
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (field) => (e) => {
     setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch("https://formspree.io/f/xgopbznn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSuccess(false), 3000);
+      } else {
+        alert("Something went wrong.");
+      }
+    } catch (err) {
+      alert("Error submitting form.");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -65,10 +95,14 @@ const Contact = () => {
 
           <Reveal delay={0.15}>
             <form
-              action="https://formspree.io/f/xgopbznn"
-              method="POST"
+              onSubmit={handleSubmit}
               style={{ display: "flex", flexDirection: "column", gap: 16 }}
             >
+              {success && (
+                <p style={{ color: "var(--accent)", fontSize: 14 }}>
+                  ✅ Message sent successfully!
+                </p>
+              )}
               <input
                 name="name"
                 placeholder="Your Name"
@@ -94,17 +128,20 @@ const Contact = () => {
                 required
               />
 
-              {/* Optional hidden fields */}
-              <input type="hidden" name="_subject" value="New Contact Form Submission" />
-              <input type="hidden" name="_captcha" value="false" />
-
               <button
                 type="submit"
+                disabled={loading}
                 className="btn-primary"
-                style={{ width: "100%", justifyContent: "center", padding: "16px 28px" }}
+                style={{
+                  width: "100%",
+                  justifyContent: "center",
+                  padding: "16px 28px",
+                  opacity: loading ? 0.7 : 1,
+                  cursor: loading ? "not-allowed" : "pointer",
+                }}
               >
-                Send Message <ArrowRight />
-              </button>
+                {loading ? "Sending..." : "Send Message"} <ArrowRight />
+            </button>
             </form>
           </Reveal>
         </div>
