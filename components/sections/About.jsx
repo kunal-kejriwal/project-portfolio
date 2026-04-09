@@ -17,14 +17,14 @@ const About = () => (
         <Reveal delay={0.15}>
           <div>
             <p style={{ color: "var(--text2)", lineHeight: 1.8, marginBottom: 20, fontSize: 15 }}>
-              I&apos;m Kunal Kejriwal — a backend developer who builds APIs and distributed systems in
-              Java and Spring Boot, and a technical writer who turns complex architecture into clear,
-              SEO-driven content.
+              I&apos;m Kunal Kejriwal — a backend engineer specializing in building high-throughput, 
+              distributed systems using Python (Django, FastAPI, DRF) and cloud-native architectures.
             </p>
             <p style={{ color: "var(--text2)", lineHeight: 1.8, marginBottom: 20, fontSize: 15 }}>
-              Over the past 3+ years, I&apos;ve worked with companies like Deloitte building
-              enterprise-grade platforms, while simultaneously producing 50+ technical articles that
-              have driven hundreds of thousands of organic impressions.
+              At Deloitte, I architected asynchronous data pipelines processing 20M+ records/day, 
+              built enterprise-grade search infrastructure on GCP, and improved API performance by 
+              35% through deep backend optimizations. I work extensively with event-driven systems, 
+              Celery-based task orchestration, and scalable REST APIs designed for real-world production loads.
             </p>
             <p style={{ color: "var(--text2)", lineHeight: 1.8, fontSize: 15 }}>
               I operate at the intersection of building and explaining — designing systems that
