@@ -1,8 +1,13 @@
 "use client";
 
 import { Reveal } from "../ui";
-import { ArrowRight } from "../icons";
+import { ArrowRight, GitHubIcon, LinkedInIcon } from "../icons";
 import { scrollToElement } from "../../utils/helpers";
+
+const SOCIAL_LINKS = [
+  { icon: <GitHubIcon />, label: "GitHub", href: "https://github.com/kunal-kejriwal" },
+  { icon: <LinkedInIcon />, label: "LinkedIn", href: "https://www.linkedin.com/in/kunal-kejriwal" },
+];
 
 const STATS = [
   ["3+", "Years Experience"],
@@ -106,8 +111,47 @@ const Hero = () => {
           </div>
         </Reveal>
 
-        <Reveal delay={0.45}>
-          <div style={{ display: "flex", gap: 48, marginTop: 64, flexWrap: "wrap" }}>
+        <Reveal delay={0.4}>
+          <div style={{ display: "flex", gap: 16, marginTop: 32, flexWrap: "wrap", alignItems: "center" }}>
+            {SOCIAL_LINKS.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8,
+                  fontSize: 13,
+                  fontWeight: 600,
+                  color: "var(--text2)",
+                  textDecoration: "none",
+                  padding: "8px 14px",
+                  borderRadius: 8,
+                  border: "1px solid var(--border)",
+                  background: "var(--bg2)",
+                  transition: "color 0.2s, border-color 0.2s",
+                  fontFamily: "'JetBrains Mono', monospace",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "var(--accent)";
+                  e.currentTarget.style.borderColor = "var(--accent)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "var(--text2)";
+                  e.currentTarget.style.borderColor = "var(--border)";
+                }}
+              >
+                {s.icon}
+                {s.label}
+              </a>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.5}>
+          <div style={{ display: "flex", gap: 48, marginTop: 48, flexWrap: "wrap" }}>
             {STATS.map(([n, l]) => (
               <div key={l}>
                 <div className="stat-number">{n}</div>

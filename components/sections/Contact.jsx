@@ -1,8 +1,18 @@
 "use client";
 
+"use client";
+
 import { useState } from "react";
 import { Reveal } from "../ui";
 import { ArrowRight, MailIcon, LinkedInIcon, GitHubIcon, ExternalLink } from "../icons";
+
+const DownloadIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <polyline points="7 10 12 15 17 10" />
+    <line x1="12" y1="15" x2="12" y2="3" />
+  </svg>
+);
 
 const CONTACT_LINKS = [
   { icon: <MailIcon />, label: "kunal@kunalkejriwal.com", href: "mailto:kunal@kunalkejriwal.com" },
@@ -89,6 +99,37 @@ const Contact = () => {
                     <ExternalLink />
                   </a>
                 ))}
+
+                <a
+                  href="/Kunal_Kejriwal_Resume.pdf"
+                  download="Kunal_Kejriwal_Resume.pdf"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 10,
+                    marginTop: 8,
+                    padding: "10px 20px",
+                    borderRadius: 8,
+                    border: "1px solid var(--border)",
+                    background: "var(--bg3)",
+                    color: "var(--text)",
+                    fontSize: 14,
+                    fontWeight: 600,
+                    textDecoration: "none",
+                    alignSelf: "flex-start",
+                    transition: "border-color 0.25s, color 0.25s",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = "var(--accent)";
+                    e.currentTarget.style.color = "var(--accent)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "var(--border)";
+                    e.currentTarget.style.color = "var(--text)";
+                  }}
+                >
+                  <DownloadIcon /> Download Resume
+                </a>
               </div>
             </div>
           </Reveal>
