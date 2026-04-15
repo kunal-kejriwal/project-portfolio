@@ -38,11 +38,11 @@ export default function Home() {
       </Suspense>
       <Hero />
       <About />
+      <ExperienceAndTestimonials />
       <Skills />
       <Projects />
       <BlogPreview />
       <FeaturedWriting />
-      <ExperienceAndTestimonials />
       <CTA />
       <Contact />
     </>
