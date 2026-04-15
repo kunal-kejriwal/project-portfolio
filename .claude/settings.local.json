@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:kunalkejriwal.com)",
+      "WebFetch(domain:theapiengine.com)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:www.getint.io)"
+    ]
+  }
+}

@@ -3,6 +3,7 @@ export { default as About } from "./About";
 export { default as Skills } from "./Skills";
 export { default as Projects } from "./Projects";
 export { default as BlogPreview } from "./BlogPreview";
+export { default as FeaturedWriting } from "./FeaturedWriting";
 export { default as ExperienceAndTestimonials } from "./ExperienceAndTestimonials";
 export { default as CTA } from "./CTA";
 export { default as Contact } from "./Contact";

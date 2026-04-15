@@ -24,19 +24,20 @@ const CTA = () => (
           className="section-title"
           style={{ maxWidth: 700, margin: "0 auto 20px" }}
         >
-          Looking to build scalable backends or high-quality technical content?
+          Available for backend engineering contracts and technical writing.
         </h2>
         <p
           style={{
             color: "var(--text2)",
-            maxWidth: 500,
+            maxWidth: 520,
             margin: "0 auto 40px",
             lineHeight: 1.7,
             fontSize: 15,
           }}
         >
-          Whether you need a robust API platform, a full-stack backend system, or SEO-optimized
-          developer content — let&apos;s talk.
+          Building an API platform, modernising a data pipeline, or need developer documentation
+          that actually drives traffic? I bring both the engineering depth and the communication
+          skills to ship it end-to-end.
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <button className="btn-primary" onClick={() => scrollToElement("contact")}>

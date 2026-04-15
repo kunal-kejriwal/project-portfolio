@@ -30,13 +30,57 @@ const BlogPostClient = ({ slug }) => {
   const nextPost = currentIndex < blogs.length - 1 ? blogs[currentIndex + 1] : null;
 
   const renderContent = (content) => {
-    return content.split("\n").map((line, i) => {
+    const lines = content.split("\n");
+    const elements = [];
+    let i = 0;
+    let key = 0;
+
+    while (i < lines.length) {
+      const line = lines[i];
       const trimmed = line.trim();
-      if (!trimmed) return <br key={i} />;
+
+      // Code block
+      if (trimmed.startsWith("```")) {
+        const codeLines = [];
+        i++;
+        while (i < lines.length && !lines[i].trim().startsWith("```")) {
+          codeLines.push(lines[i]);
+          i++;
+        }
+        elements.push(
+          <pre
+            key={key++}
+            style={{
+              background: "var(--bg3)",
+              border: "1px solid var(--border)",
+              borderRadius: 10,
+              padding: "20px 24px",
+              overflowX: "auto",
+              fontSize: 13,
+              lineHeight: 1.7,
+              color: "var(--text)",
+              fontFamily: "'JetBrains Mono', monospace",
+              marginTop: 16,
+              marginBottom: 24,
+            }}
+          >
+            <code>{codeLines.join("\n")}</code>
+          </pre>
+        );
+        i++; // skip closing ```
+        continue;
+      }
+
+      if (!trimmed) {
+        elements.push(<br key={key++} />);
+        i++;
+        continue;
+      }
+
       if (trimmed.startsWith("## ")) {
-        return (
+        elements.push(
           <h2
-            key={i}
+            key={key++}
             style={{
               fontFamily: "'Syne', sans-serif",
               fontSize: 22,
@@ -46,14 +90,17 @@ const BlogPostClient = ({ slug }) => {
               color: "var(--text)",
             }}
           >
-            {trimmed.replace("## ", "")}
+            {trimmed.slice(3)}
           </h2>
         );
+        i++;
+        continue;
       }
+
       if (trimmed.startsWith("### ")) {
-        return (
+        elements.push(
           <h3
-            key={i}
+            key={key++}
             style={{
               fontFamily: "'Syne', sans-serif",
               fontSize: 18,
@@ -63,14 +110,38 @@ const BlogPostClient = ({ slug }) => {
               color: "var(--text)",
             }}
           >
-            {trimmed.replace("### ", "")}
+            {trimmed.slice(4)}
           </h3>
         );
+        i++;
+        continue;
       }
+
+      if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
+        elements.push(
+          <div
+            key={key++}
+            style={{
+              display: "flex",
+              gap: 10,
+              fontSize: 15,
+              color: "var(--text2)",
+              lineHeight: 1.8,
+              marginBottom: 6,
+            }}
+          >
+            <span style={{ color: "var(--accent)", flexShrink: 0 }}>▸</span>
+            <span>{trimmed.slice(2)}</span>
+          </div>
+        );
+        i++;
+        continue;
+      }
+
       if (/^\d+\.\s/.test(trimmed)) {
-        return (
+        elements.push(
           <p
-            key={i}
+            key={key++}
             style={{
               color: "var(--text2)",
               fontSize: 15,
@@ -82,10 +153,13 @@ const BlogPostClient = ({ slug }) => {
             {trimmed}
           </p>
         );
+        i++;
+        continue;
       }
-      return (
+
+      elements.push(
         <p
-          key={i}
+          key={key++}
           style={{
             color: "var(--text2)",
             fontSize: 15,
@@ -96,7 +170,10 @@ const BlogPostClient = ({ slug }) => {
           {trimmed}
         </p>
       );
-    });
+      i++;
+    }
+
+    return elements;
   };
 
   return (

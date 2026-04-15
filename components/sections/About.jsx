@@ -17,19 +17,19 @@ const About = () => (
         <Reveal delay={0.15}>
           <div>
             <p style={{ color: "var(--text2)", lineHeight: 1.8, marginBottom: 20, fontSize: 15 }}>
-              I&apos;m Kunal Kejriwal — a backend engineer specializing in building high-throughput, 
-              distributed systems using Python (Django, FastAPI, DRF) and cloud-native architectures.
+              I&apos;m a backend engineer at Deloitte building async data pipelines that process 20M+ records/day on GCP,
+              with a 35% API latency improvement shipped through N+1 elimination and algorithmic refactoring.
+              My stack is Python — Django, FastAPI, DRF — with Celery, Redis, PostgreSQL, and Cloud Run for the infrastructure layer.
             </p>
             <p style={{ color: "var(--text2)", lineHeight: 1.8, marginBottom: 20, fontSize: 15 }}>
-              At Deloitte, I architected asynchronous data pipelines processing 20M+ records/day, 
-              built enterprise-grade search infrastructure on GCP, and improved API performance by 
-              35% through deep backend optimizations. I work extensively with event-driven systems, 
-              Celery-based task orchestration, and scalable REST APIs designed for real-world production loads.
+              Outside of Deloitte, I&apos;ve published 100+ technical articles at Unite.AI covering LLMs, multimodal models,
+              and AI infrastructure — and I maintain two open-source backend tools, APIEngine and MeshEngine,
+              both built to production standards with observability, automated tests, and real deployment pipelines.
             </p>
             <p style={{ color: "var(--text2)", lineHeight: 1.8, fontSize: 15 }}>
-              I operate at the intersection of building and explaining — designing systems that
-              perform under pressure, and writing content that makes complex technology accessible
-              and discoverable.
+              I care about systems that are observable, maintainable, and documented well enough
+              that the next engineer doesn&apos;t have to guess. If you need backend depth
+              and the communication skills to match — that&apos;s the combination I bring.
             </p>
           </div>
         </Reveal>
