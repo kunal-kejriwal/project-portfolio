@@ -8,6 +8,7 @@ import {
   Skills,
   Projects,
   BlogPreview,
+  FeaturedWriting,
   ExperienceAndTestimonials,
   CTA,
   Contact,
@@ -40,6 +41,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <BlogPreview />
+      <FeaturedWriting />
       <ExperienceAndTestimonials />
       <CTA />
       <Contact />

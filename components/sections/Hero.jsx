@@ -6,8 +6,7 @@ import { scrollToElement } from "../../utils/helpers";
 
 const STATS = [
   ["3+", "Years Experience"],
-  ["50+", "Articles Published"],
-  ["96%", "Client Satisfaction"],
+  ["100+", "Articles Published"],
 ];
 
 const Hero = () => {

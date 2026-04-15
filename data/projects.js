@@ -5,10 +5,10 @@ const projects = [
     problem:
       "Mock APIs and localhost servers don't behave like production systems — no real validation, no persistence, no network behavior. Integration issues surface late in development when changes are costly.",
     solution:
-      "Built a schema-driven live backend simulation platform with a custom URL dispatcher and request multiplexer. Developers define JSON Schema Objects and instantly get globally accessible REST endpoints with real persistence, per-user namespace isolation, configurable rate limits, and full CRUD. Background jobs run via Celery + Redis with retry logic and dead-letter queues; deployed on GCP.",
+      "Open-source CRM API sandbox platform. Developers get a complete REST backend with 14 CRM objects, JWT authentication, rate limiting, and full request logging — instantly accessible without any setup. Built with a custom URL dispatcher, per-user namespace isolation, Celery + Redis background jobs, and full CRUD with filtering, sorting, and pagination.",
     stack: ["Python", "Django", "DRF", "FastAPI", "Redis", "Celery", "PostgreSQL", "Docker", "GCP"],
     outcome:
-      "Supports 500+ Developers, 250K+ API calls/user/month.",
+      "250K+ API calls/user/month. Full request logging, JWT auth, and configurable rate limits out of the box.",
     link: "https://theapiengine.com",
     highlights: [
       "Custom URL dispatcher with per-user namespace isolation",
